@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      colors: ${{ fromJSON(steps.colors.outputs.colors) }}
+      colors: ${{ steps.colors.outputs.colors }}
 
     steps:
       - name: Define Colors
@@ -21,7 +21,7 @@ jobs:
     needs: define-matrix
     strategy:
       matrix:
-        color: ${{ needs.define-matrix.outputs.colors }}
+        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
 
     steps:
       - name: Define Color
