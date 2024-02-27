@@ -50,8 +50,6 @@ jobs:
       with:
         name: ${{ matrix.color }}
       
-    - name: Consume Color
+    - name: Report Color
       run: |
-        find .
         cat color
-
