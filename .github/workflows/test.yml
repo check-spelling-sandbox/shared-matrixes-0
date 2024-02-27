@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      colors: ${{ steps.colors.outputs.colors }}
+      colors: ${{ fromJSON(steps.colors.outputs.colors) }}
 
     steps:
       - name: Define Colors
